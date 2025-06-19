@@ -1,0 +1,306 @@
+/* General Styles */
+:root {
+    --primary-color: #2c786c;
+    --secondary-color: #004445;
+    --accent-color: #f8b400;
+    --light-color: #faf5e4;
+    --dark-color: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Navigation */
+nav {
+    background-color: var(--secondary-color);
+    padding: 15px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1920x1080');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+/* Sections */
+.section {
+    padding: 60px 0;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--secondary-color);
+}
+
+/* About Section */
+.about .content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.about .content img {
+    width: 50%;
+    border-radius: 10px;
+}
+
+/* Benefits Section */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.benefit-item {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.benefit-item:hover {
+    transform: translateY(-10px);
+}
+
+.benefit-item i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.benefit-item h3 {
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+/* Sunnah Section */
+.sunnah {
+    background-color: var(--light-color);
+}
+
+.hadiths {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.hadith {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hadith p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.hadith .reference {
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: left;
+}
+
+/* Booking Section */
+.booking {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.booking h2 {
+    color: white;
+}
+
+.booking form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--dark-color);
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--dark-color);
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #e0a800;
+}
+
+#bookingSuccess {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    color: var(--dark-color);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Contact Section */
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.contact-info div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-info i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about .content {
+        flex-direction: column;
+    }
+    
+    .about .content img {
+        width: 100%;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 5px 0;
+    }
+}

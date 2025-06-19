@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ريا سانتيه | مركز التجميل والعناية بالبشرة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #fff9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #ffb6c1 0%, #ff69b4 100%);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-left: 10px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: #ffebee;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #ff69b4;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background: #ff1493;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+        }
+        
+        /* About Section */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #ff69b4;
+            font-size: 36px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #ff69b4;
+            margin: 15px auto;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: #fff;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 20px;
+        }
+        
+        .service-content h3 {
+            color: #ff69b4;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            background-color: #f9f9f9;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 250px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 105, 180, 0.8);
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(135deg, #ffb6c1 0%, #ff69b4 100%);
+            color: white;
+        }
+        
+        .testimonials .section-title {
+            color: white;
+        }
+        
+        .testimonials .section-title::after {
+            background: white;
+        }
+        
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .testimonial {
+            padding: 30px;
+            display: none;
+        }
+        
+        .testimonial.active {
+            display: block;
+            animation: fadeIn 1s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .testimonial-text {
+            font-size: 20px;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .testimonial-nav button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        
+        /* Appointment Section */
+        .appointment {
+            background-color: white;
+        }
+        
+        .appointment-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* Blog Section */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .blog-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .blog-card:hover .blog-image img {
+            transform: scale(1.1);
+        }
+        
+        .blog-content {
+            padding: 20px;
+        }
+        
+        .blog-content h3 {
+            color: #ff69b4;
+            margin-bottom: 10px;
+        }
+        
+        .blog-meta {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .read-more {
+            color: #ff69b4;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: #f9f9f9;
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info h3 {
+            color: #ff69b4;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            background: #ff69b4;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 15px;
+            flex-shrink: 0;
+        }
+        
+        .contact-text h4 {
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .contact-map {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* FAQ Section */
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background: #ff69b4;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-col h3 {
+            color: #ff69b4;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-col ul li a:hover {
+            color: #ff69b4;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            background: #555;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: #ff69b4;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #ff69b4;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+            }
+            
+            nav {
+                display: none;
+                width: 100%;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-spa"></i>
+                <span>Raya santé</span>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#about">من نحن</a></li>
+                    <li><a href="#services">خدماتنا</a></li>
+                    <li><a href="#gallery">معرض الأعمال</a></li>
+                    <li><a href="#appointment">حجز موعد</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>جمالكِ هو بصمتنا</h1>
+            <p>استعيدي إشراقتكِ مع أحدث تقنيات العناية بالبشرة والجمال في مركز ريا سانتيه</p>
+            <a href="#appointment" class="btn">احجزي موعدكِ الآن</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">من نحن</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Raya santé
+                        مركز متخصص في الجمال والطب التجميلي غير الجراحي، تديره نساء لديهن خبرة واسعة ومتخصصات في الجمال الطبيعي ومجال العناية بالبشرة والجسم.
+                         نقدم حلولاً جمالية آمنة وفعالة باستخدام أحدث التقنيات العالمية،
+                          مع الحفاظ على الجمال الطبيعي
+                          . فريقنا من السيدات ذوات الخبرة الطويلة يضمن لكِ نتائج مذهلة في بيئة نظيفة وآمنة. </p>
+                    
+                    <a href="#services" class="btn">اكتشف خدماتنا</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="مركز ريا سانتيه">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="container">
+            <h2 class="section-title">خدماتنا</h2>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1526758097130-bab247274f58?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="العناية بالبشرة والوجه">
+                    </div>
+                    <div class="service-content">
+                        <h3>العناية بالبشرة والوجه</h3>
+                        <p>HydraFacial، BB Glow ,BB Lip, Micro needling, Mésothérapie, Injection visage (vitamines + acide hyaluronique), Radiofréquence, Laser froid ,Nettoyage de peau</p>
+                        <a href="#appointment" class="btn">احجزي الآن</a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="العناية بالجسم">
+                    </div>
+                    <div class="service-content">
+                        <h3>العناية بالجسم</h3>
+                        <p>Hijama (كوقاية وتعافي بعد الكوفيد), Radiofréquence corps, Lipo Laser, Cavitation, Infrarouge, Vacio</p>
+                        <a href="#appointment" class="btn">احجزي الآن</a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="الطب التجميلي الدقيق">
+                    </div>
+                    <div class="service-content">
+                        <h3>الطب التجميلي الدقيق</h3>
+                        <p>Injection mésor + BCN , Plasma Pen , Mésothérapie, Microneedling, Botox , Acide hyaluronique</p> 
+                        <a href="#appointment" class="btn">احجزي الآن</a>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="المكياج الدائم">
+                    </div>
+                    <div class="service-content">
+                        <h3>المكياج الدائم</h3>
+                        <p>Microblading, Microschading, Powder Brows, Hair Strokes, (french line, lash powder)</p>
+                        <a href="#appointment" class="btn">احجزي الآن</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">معرض الأعمال</h2>
+            <div class="gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1551836026-d2f6d8a2448a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="قبل وبعد">
+                    <div class="gallery-overlay">
+                        <h3>HydraFacial</h3>
+                        <p>نتائج بعد جلسة واحدة</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1599351430140-c70f0250bd70?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="قبل وبعد">
+                    <div class="gallery-overlay">
+                        <h3>Microneedling</h3>
+                        <p>3 جلسات لعلاج الندوب</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1551836026-10b4a9d0a6c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="قبل وبعد">
+                    <div class="gallery-overlay">
+                        <h3>BB Glow</h3>
+                        <p>نتائج بعد جلستين</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1551836026-4b7d5a0a0f9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="قبل وبعد">
+                    <div class="gallery-overlay">
+                        <h3>Maquillage permanent</h3>
+                        <p>نتائج الحواجب بعد الجلسة</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1551836026-5b5b5b5b5b5b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="قبل وبعد">
+                    <div class="gallery-overlay">
+                        <h3>Cavitation</h3>
+                        <p>نتائج بعد 5 جلسات</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1551836026-6b5b5b5b5b5b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="قبل وبعد">
+                    <div class="gallery-overlay">
+                        <h3>الحجامة</h3>
+                        <p>جلسة علاجية</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <h2 class="section-title">آراء عملائنا</h2>
+            <div class="testimonial-slider">
+                <!-- Testimonial 1 -->
+                <div class="testimonial active">
+                    <p class="testimonial-text">"جربت الهيدرا فيشل وكانت نتائجها مذهلة! بشرة وجهي أصبحت أكثر نضارة وإشراقاً بعد جلسة واحدة فقط."</p>
+                    <p class="testimonial-author">- سارة</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial">
+                    <p class="testimonial-text">"فريق ريا سانتيه محترف جداً، أشعر بأمان تام أثناء الجلسات والنتائج تتحدث عن نفسها."</p>
+                    <p class="testimonial-author">- نورة</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial">
+                    <p class="testimonial-text">"الميكروبليدينغ غير شكل حواجبي تماماً، تبدو طبيعية وجميلة، شكراً لفريق ريا سانتيه."</p>
+                    <p class="testimonial-author">- أمينة</p>
+                </div>
+                
+                <div class="testimonial-nav">
+                    <button id="prevTestimonial"><i class="fas fa-chevron-right"></i></button>
+                    <button id="nextTestimonial"><i class="fas fa-chevron-left"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section class="section appointment" id="appointment">
+        <div class="container">
+            <h2 class="section-title">حجز موعد</h2>
+            <form class="appointment-form">
+                <div class="form-group">
+                    <label for="name">الاسم الكامل</label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">رقم الهاتف</label>
+                    <input type="tel" id="phone" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني (اختياري)</label>
+                    <input type="email" id="email" class="form-control">
+                </div>
+                
+                <div class="form-group">
+                    <label for="service">الخدمة المطلوبة</label>
+                    <select id="service" class="form-control" required>
+                        <option value="">اختر الخدمة</option>
+                        <option value="hydrafacial">هايدرا فيشل</option>
+                        <option value="bbglow">بي بي غلوف</option>
+                        <option value="microneedling">ميكرونيدلينغ</option>
+                        <option value="mesotherapy">ميزوثيرابي</option>
+                        <option value="plasma">قلم البلازما</option>
+                        <option value="botox">بوتوكس</option>
+                        <option value="hyaluronic">حمض الهيالورونيك</option>
+                        <option value="hijama">الحجامة</option>
+                        <option value="rf">الراديو فريكونسي</option>
+                        <option value="cavitation">الكافيتيشن</option>
+                        <option value="microblading">الميكروبليدينغ</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="date">التاريخ المفضل</label>
+                    <input type="date" id="date" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="time">الوقت المفضل</label>
+                    <select id="time" class="form-control" required>
+                        <option value="">اختر الوقت</option>
+                        <option value="9-11">9 صباحاً - 11 صباحاً</option>
+                        <option value="11-1">11 صباحاً - 1 ظهراً</option>
+                        <option value="1-3">1 ظهراً - 3 عصراً</option>
+                        <option value="3-5">3 عصراً - 5 مساءً</option>
+                        <option value="5-7">5 مساءً - 7 مساءً</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="notes">ملاحظات إضافية (اختياري)</label>
+                    <textarea id="notes" class="form-control"></textarea>
+                </div>
+                
+                <button type="submit" class="btn">تأكيد الحجز</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">نصائح وجمال</h2>
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1498843053639-170ff2715e72?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="نصائح للعناية بالبشرة">
+                    </div>
+                    <div class="blog-content">
+                        
+                        <h3>كيف تحافظين على نتائج botox</h3>
+                        <p>للحفاظ على نتائج البوتوكس، تجنّبي تعابير الوجه المفرطة والتعرض المفرط للشمس أو الحرارة بعد الجلسة.
+                            اتبعي روتين عناية بالبشرة منتظم واستخدمي واقي شمس يوميًا.</p>
+                        
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="فوائد الحجامة">
+                    </div>
+                    <div class="blog-content">
+                        
+                        <h3>فوائد الحجامة للدورة الدموية</h3>
+                        <p>الحجامة تُساعد على تنشيط الدورة الدموية من خلال تحفيز تدفق الدم إلى المناطق المعالجة، مما يُحسّن تغذية الأنسجة وإزالة السموم.
+                            كما تساهم في توسيع الأوعية الدموية وتقليل الاحتقان، مما يُعزز من وظائف الجهاز الدوري ويمنح الجسم شعورًا بالحيوية.</p>
+                        
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="العناية بعد الميكرونيدلينغ">
+                    </div>
+                    <div class="blog-content">
+                        
+                        <h3>العناية بالبشرة بعد Microneedling</h3>
+                        <p>بعد الـ Microneedling، تجنّبي التعرض للشمس واستخدمي واقي شمس ورطّبي بشرتك بمنتجات مهدئة.
+                            تجنّبي المكياج والمنتجات القوية لمدة 48 ساعة للحفاظ على نظافة البشرة وتعزيز التعافي.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">اتصل بنا</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>
+                        <div class="footer-col">
+                            
+                            <ul class="contact-info">
+                                <li><i class="fas fa-map-marker-alt"></i> zahraa ، تونس</li>
+                                <li><i class="fas fa-phone"></i> 844 372 53 216+ </li>
+                                <li><i class="fas fa-envelope"></i> boudokhane.islem122@gmail.com</li>
+                            </ul>
+                        </div>
+                    </div>
